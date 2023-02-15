@@ -2,14 +2,37 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class User {
-    private String name; // required
+    //All final attributes
+
+    private final String name; // required
+    private final int age; // optional
+    private final String phone; // optional
+    private final String address; // optional
 
     private Map<String, CommunicationService> CommServices;
 
-    User(String name) {
-        this.name=name;
+    User(UserBuilder builder) {
+       this.name=builder.name;
+        this.age = builder.age;
+        this.phone = builder.phone;
+        this.address = builder.address;
         CommServices=new HashMap<>();
     }
+
+
+    public String name() {
+        return name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public String getPhone() {
+        return phone;
+    }
+    public String getAddress() {
+        return address;
+    }
+
 
 
     public void addCommService(String serviceName, CommunicationService commChanel){

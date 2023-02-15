@@ -10,9 +10,22 @@ public class Main {
          CommunicationService WhatsAppComm=CommFactory.getCommServiceInstance("WhatsApp");
 
 
-         User emp1=new User("Deepak Saini");
-         User emp2=new User("Aman Jain");
-         User emp3=new User("Adarsh Gupta");
+         User emp1=new UserBuilder("Lokesh")
+                 .age(30)
+                 .phone("1234567")
+                 .address("Fake address 1234")
+                 .build();
+
+         User emp2=new UserBuilder("Jack")
+                 .age(40)
+                 .phone("5655")
+                 //no address
+                 .build();
+         User emp3=new UserBuilder("Super")
+                 //No age
+                 //No phone
+                 //no address
+                 .build();
 
 
 
